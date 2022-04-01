@@ -130,8 +130,8 @@ class results{
 	milliseconds : INT
 	fastestLap : INT
 	rank : INT
-	fastestLapTime : TIME
-	fastestLapSpeed : TIME
+	fastestLapTime : VARCHAR
+	fastestLapSpeed : VARCHAR
 	F: statusId : INT
 }
 
