@@ -4,7 +4,7 @@ classDiagram
 class circuits{
 
 	P: circuitId : INT
-	circuitRef : VARCHAR
+	U: circuitRef : VARCHAR
 	name : VARCHAR
 	location : VARCHAR
 	country : VARCHAR
@@ -30,14 +30,14 @@ class constructor_standings {
 	F: constructorId : INT
 	points : INT
 	position : INT
-    positionText ; CHAR,
+    positionText : VARCHAR,
 	wins : INT
 }
 
 class constructors {
 
 	P: constructorId : INT
-	constructorRef : VARCHAR
+	U: constructorRef : VARCHAR
 	name : VARCHAR
 	nationality : VARCHAR
 	url : VARCHAR
@@ -57,7 +57,7 @@ class driver_standings {
 class drivers {
 
 	P: driverId : INT
-	F: driverRef : VARCHAR
+	U: driverRef : VARCHAR
 	number : INT
 	code : CHAR(3)
 	forename : VARCHAR
