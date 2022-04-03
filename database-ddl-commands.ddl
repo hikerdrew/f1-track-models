@@ -1,3 +1,12 @@
+CREATE TABLE seasons(
+
+    year INT,
+    url VARCHAR,
+    
+    CONSTRAINT PKyear PRIMARY KEY(year)
+);
+
+
 CREATE TABLE circuits(
 
     circuitId INT,
@@ -8,22 +17,27 @@ CREATE TABLE circuits(
     lat FLOAT,
     lng FLOAT,
     alt FLOAT,
-    url VARCHAR,
+    url VARCHAR, 
 
-	CONSTRAINT PKcircuitId PRIMARY KEY(circuitId)
+	CONSTRAINT PKcircuitId PRIMARY KEY(circuitId),
+	UNIQUE(circuitRef)
 );
 
 
-CREATE TABLE seasons(
+CREATE TABLE constructors(
 
-    year INT,
+    constructorId INT,
+    constructorRef VARCHAR,
+    name VARCHAR,
+    nationality VARCHAR,
     url VARCHAR,
-    
-    CONSTRAINT PKyear PRIMARY KEY(year)
+
+	CONSTRAINT PKconstructorId PRIMARY KEY (constructorId),
+	UNIQUE(constructorRef)
 );
 
 
-CREATE TABLE races (
+CREATE TABLE races(
 
     raceId INT,
     year INT,
@@ -40,18 +54,6 @@ CREATE TABLE races (
 );
 
 
-CREATE TABLE constructors(
-
-    constructorId INT,
-    constructorRef VARCHAR,
-    name VARCHAR,
-    nationality VARCHAR,
-    url VARCHAR,
-
-	CONSTRAINT PKconstructorId PRIMARY KEY (constructorId)
-);
-
-
 CREATE TABLE drivers(
 
     driverId INT,
@@ -64,7 +66,8 @@ CREATE TABLE drivers(
     nationality VARCHAR,
     url VARCHAR,
     
-    CONSTRAINT PKdriverId PRIMARY KEY (driverId)
+    CONSTRAINT PKdriverId PRIMARY KEY (driverId),
+    UNIQUE(driverRef)
 );
 
 
@@ -86,6 +89,22 @@ CREATE TABLE constructor_results (
     status VARCHAR,
 
 	CONSTRAINT PKconstructor_resultsId PRIMARY KEY (constructor_resultsId),
+	CONSTRAINT FKraceId FOREIGN KEY (raceId) REFERENCES races(raceId),
+	CONSTRAINT FKconstructorId FOREIGN KEY (constructorId) REFERENCES constructors(constructorId)
+);
+
+
+CREATE TABLE constructor_standings(
+
+	constructorStandingsId INT,
+	raceId INT,
+	constructorId INT,
+	points INT,
+	position INT,
+	positionText VARCHAR,
+	wins INT,
+	
+	CONSTRAINT PKconstructorStandingsId PRIMARY KEY (constructorStandingsId),
 	CONSTRAINT FKraceId FOREIGN KEY (raceId) REFERENCES races(raceId),
 	CONSTRAINT FKconstructorId FOREIGN KEY (constructorId) REFERENCES constructors(constructorId)
 );
@@ -182,3 +201,8 @@ CREATE TABLE driver_standings(
 	CONSTRAINT FKraceId FOREIGN KEY (raceId) REFERENCES races(raceId),
     CONSTRAINT FKdriverId FOREIGN KEY (driverId) REFERENCES drivers(driverId)
 );
+
+
+
+
+
