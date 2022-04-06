@@ -20,7 +20,7 @@ CREATE TABLE circuits(
     url VARCHAR, 
 
 	CONSTRAINT PKcircuitId PRIMARY KEY(circuitId),
-	UNIQUE(circuitRef)
+	CONSTRAINT UcircuitRef UNIQUE(circuitRef)
 );
 
 
@@ -33,7 +33,7 @@ CREATE TABLE constructors(
     url VARCHAR,
 
 	CONSTRAINT PKconstructorId PRIMARY KEY (constructorId),
-	UNIQUE(constructorRef)
+	CONSTRAINT UconstructorRef UNIQUE(constructorRef)
 );
 
 
@@ -66,8 +66,8 @@ CREATE TABLE drivers(
     nationality VARCHAR,
     url VARCHAR,
     
-    CONSTRAINT PKdriverId PRIMARY KEY (driverId),
-    UNIQUE(driverRef)
+    CONSTRAINT PKdriverId PRIMARY KEY(driverId),
+    CONSTRAINT UdriverRef UNIQUE(driverRef)
 );
 
 
