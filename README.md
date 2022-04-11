@@ -26,7 +26,7 @@ export PATH=/Applications/Postgres.app/Contents/Versions/14/bin/:$PATH
 
 ### How to import CSV files into database
 
-- I recommend looking at the .md file called ERdiagram.md as it will be useful to see the order of the CSV files which are needed for the relations (tables) with the primary keys because they need to be imported first. This is required when adding data in a relational database like this one. I recommend the github website .MD viewer as it is a wide diagram and can be hard to see in some MD editors. You can ignore the arrows in the diagram, as there is no hierarchy. I will also put the import order in text below.
+- I recommend looking at the .md file called ERdiagram.md as it will be useful to see the order of the CSV files which are needed for the relations (tables) with the primary keys because they need to be imported first. This is required when adding data in a relational database like this one. I recommend the github website .md viewer as it is a wide diagram and can be hard to see in some MD editors. You can ignore the arrows in the diagram, as there is no hierarchy. I will also put the import order in text below.
 
 - I have created the database going from left to right by row. For example, I would import: seasons, circuits, then constructors, races, drivers, status, then constructor_results, constructor_standings, lap_times, pit_stops, qualifying, results, driver_standings. 
 
