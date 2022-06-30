@@ -26,7 +26,7 @@ export PATH=/Applications/Postgres.app/Contents/Versions/14/bin/:$PATH
 
 ### How to import CSV files into database
 
-- I recommend looking at the .md file called ERdiagram.md as it will be useful to see the order of the CSV files which are needed for the relations (tables) with the primary keys because they need to be imported first. This is required when adding data in a relational database like this one. I recommend the github website .md viewer as it is a wide diagram and can be hard to see in some MD editors. You can ignore the arrows in the diagram, as there is no hierarchy. I will also put the import order in text below.
+- I recommend looking at the .md file called ERdiagram.md as it will be useful to see the order of the CSV files which are needed for the relations (tables) with the primary keys because they need to be imported first. This is required when adding data in a relational database like this one. I recommend the github website .md viewer as it is a wide diagram and can be hard to see in some markdown editors. You can ignore the arrows in the diagram, as there is no hierarchy. I will also put the import order in text below.
 
 - I have created the database going from left to right by row. For example, I would import: seasons, circuits, then constructors, races, drivers, status, then constructor_results, constructor_standings, lap_times, pit_stops, qualifying, results, driver_standings. 
 
@@ -34,6 +34,6 @@ export PATH=/Applications/Postgres.app/Contents/Versions/14/bin/:$PATH
 
 - In postico use the file tab in the menu bar and click on import CSV or use the shortcut command-I. Then open ergast-database-csv folder and load the first file seasons. 
 
-- On the new window click on the "Target Table" selection drop down and click on `seasons`. For what we are doing where the colmun names of the CSVs match the attribute names of the relations you can just click on "Match Columns" to the right of the Target Table drop down and click "Match Columns by Name" and you should see both names should match up for each column. It can be helpful to open the empty relation and then import the file to see that it was imported correctly.
+- On the new window click on the "Target Table" selection drop down and click on "seasons". For what we are doing where the colmun names of the CSVs match the attribute names of the relations you can just click on "Match Columns" to the right of the Target Table drop down and click "Match Columns by Name" and you should see both names should match up for each column.
 
 - Repeat the import process in the order mentioned until each CSV is imported.
