@@ -1,3 +1,4 @@
 pandas
 jupyter
 psycopg2
+GitPython
