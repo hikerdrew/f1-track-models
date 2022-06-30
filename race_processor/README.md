@@ -11,13 +11,13 @@ Make sure at least python 3.9.12 is installed
 python3 --version
 ```
 
-If it isn't install with homebrew and restart your terminal.
+If it isn't installed then do so with homebrew and restart your terminal.
 ```
 
 brew install python3
 ```
 
-## Create virutal environment
+## Create a virutal environment
 
 ```
 
