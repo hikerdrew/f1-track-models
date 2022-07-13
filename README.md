@@ -5,8 +5,15 @@
 ### You can use the postgres app to get the server up and running:
 https://postgresapp.com
 
-### Use this path to .zprofile to be able to connect to the database with the terminal
-export PATH=/Applications/Postgres.app/Contents/Versions/14/bin/:$PATH
+1. Download   ➜   Move to Applications folder   ➜   Double Click
+
+2. Click "Initialize" to create a new server
+
+3. Add postgres commands to your terminal path
+    ```
+    sudo mkdir -p /etc/paths.d &&
+    echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
+    ```
 
 ### You can use positco as a PostgresSQL client and can be found on the Mac App store: https://apps.apple.com/us/app/postico/id1031280567?mt=12
 
