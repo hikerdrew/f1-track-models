@@ -1,6 +1,13 @@
 # Installation
 
-Open the repo directory in Terminal
+## Prerequisites
+1. Install Command Line Tools: `xcode-select --install`
+2. Install [Homebrew](https://brew.sh/). Then run `brew` and install command line tools as prompted. Then follow the "Next Steps" that brew prints to make the `brew` command runnable.
+  a. Next Steps should include running:
+```
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.zprofile
+```
+3. Restart your terminal window (or tab).
 
 ## Install Python
 
@@ -16,6 +23,8 @@ brew install python3
 ```
 
 ## Create a virutal environment
+
+Open the repo directory in Terminal
 
 ```
 python3 -m venv env 
