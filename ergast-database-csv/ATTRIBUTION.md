@@ -1,1 +1,0 @@
-Data provided by Ergast at http://ergast.com/mrd/db/#csv
